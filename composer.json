@@ -1,0 +1,42 @@
+{
+    "name": "tigerheck/laravel-aws-secrets-manager",
+    "type": "library",
+    "license": "MIT",
+    "description": "Use AWS Secrets manager to load environment variables for configuration.",
+    "keywords": [
+        "laravel",
+        "aws-secrets-manager"
+    ],
+    "authors": [
+        {
+            "name": "Chirag Goti",
+            "email": "gotichirag2011@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1 || ^7.3 || ^7.4 || ^8.0",
+        "aws/aws-sdk-php": "^3.145 || ^3.219",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8 || ^5.0 || ^6.0 || ^7.4",
+        "phpunit/phpunit": "^7.0||^8.4||^9.3.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TigerHeck\\AwsSecretsManager\\AwsSecretsManagerServiceProvider"
+            ],
+            "aliases": {
+                "AwsSecretsManager": "TigerHeck\\AwsSecretsManager\\AwsSecretsManagerFacade"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "TigerHeck\\AwsSecretsManager\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
