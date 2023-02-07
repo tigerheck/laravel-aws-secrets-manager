@@ -3,7 +3,6 @@
 namespace TigerHeck\AwsSecretsManager;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Http;
 
 class AwsSecretsManagerServiceProvider extends ServiceProvider
 {
@@ -31,7 +30,7 @@ class AwsSecretsManagerServiceProvider extends ServiceProvider
     {
         // Load Secrets
         if (config('aws-secrets-manager.enable-secrets-manager')) {
-            $secretsManager = new AwsSecretsManager();
+            $secretsManager = new AwsSecretsManagerService();
             $secretsManager->loadSecrets();
         }
     }
