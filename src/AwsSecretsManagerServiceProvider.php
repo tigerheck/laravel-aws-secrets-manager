@@ -14,19 +14,16 @@ class AwsSecretsManagerServiceProvider extends ServiceProvider
             __DIR__ . '/../config' => config_path(),
         ], 'config');
 
+        $this->bootAwsSecretsManager();
+
     }
     
     public function register()
     {
-        $this->registerAwsSecretsManager();
+        
     }
 
-    public function provides()
-    {
-        return ['aws_secrets_manager'];
-    }
-
-    protected function registerAwsSecretsManager()
+    protected function bootAwsSecretsManager()
     {
         // Load Secrets
         if (config('aws-secrets-manager.enable-secrets-manager')) {
