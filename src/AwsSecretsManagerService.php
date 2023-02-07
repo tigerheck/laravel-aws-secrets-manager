@@ -23,14 +23,14 @@ class AwsSecretsManagerService {
      */
     public function __construct()
     {
-        $this->listTagName = config('aws.secrets-manager.tag-name');
-        $this->listTagValue = config('aws.secrets-manager.tag-value');
-        $this->enabledEnvironments = config('aws.secrets-manager.enabled-environments', []);
-        $this->debug = config('aws.secrets-manager.debug', false);
-        $this->configVariables = config('aws.secrets-manager.variables-config');
-        $this->region = config('aws.secrets-manager.region');
-        $this->version = config('aws.secrets-manager.version');
-        $this->profile = config('aws.secrets-manager.profile');
+        $this->listTagName = config('aws-secrets-manager.tag-name');
+        $this->listTagValue = config('aws-secrets-manager.tag-value');
+        $this->enabledEnvironments = config('aws-secrets-manager.enabled-environments', []);
+        $this->debug = config('aws-secrets-manager.debug', false);
+        $this->configVariables = config('aws-secrets-manager.variables-config');
+        $this->region = config('aws-secrets-manager.region');
+        $this->version = config('aws-secrets-manager.version');
+        $this->profile = config('aws-secrets-manager.profile');
     }
 
     public function loadSecrets()
